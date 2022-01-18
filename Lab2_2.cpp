@@ -25,7 +25,7 @@ void qs(int* array1, int left, int right)
 	int x, y;
 
 	i = left; j = right;
-	/* выбор компаранда */
+	/* ГўГ»ГЎГ®Г° ГЄГ®Г¬ГЇГ Г°Г Г­Г¤Г  */
 	x = array1[(left + right) / 2];
 	do {
 		while ((array1[i] < x) && (i < right)) i++;
@@ -51,18 +51,18 @@ int main(void)
 
 {	
 	setlocale(LC_ALL,"Russian");
-	clock_t start, end; // объявляем переменные для определения времени выполнения
+	clock_t start, end; // Г®ГЎГєГїГўГ«ГїГҐГ¬ ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г»ГҐ Г¤Г«Гї Г®ГЇГ°ГҐГ¤ГҐГ«ГҐГ­ГЁГї ГўГ°ГҐГ¬ГҐГ­ГЁ ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї
 
 	start = clock();
 	int i = 0;
 	int size;
-	printf("Введите размер массива:");
+	printf("Г‚ГўГҐГ¤ГЁГІГҐ Г°Г Г§Г¬ГҐГ° Г¬Г Г±Г±ГЁГўГ :");
 	scanf_s("%d", &size);
 	int* array1 = (int*)malloc(size * sizeof(int));
 	srand(time(NULL));
-	printf("Быстрая сортировка:\n");
+	printf("ГЃГ»Г±ГІГ°Г Гї Г±Г®Г°ГІГЁГ°Г®ГўГЄГ :\n");
 	printf("\n");
-	printf("1.Случайные числа:\n");
+	printf("1.Г‘Г«ГіГ·Г Г©Г­Г»ГҐ Г·ГЁГ±Г«Г :\n");
 	for (int i = 0; i < size; i++)
 	{
 		array1[i] = rand() % 100;
@@ -72,10 +72,10 @@ int main(void)
 	qs(array1, 0, size - 1);
 
 	end = clock();
-	printf("Время выполнения = %.4f секунд\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
+	printf("Г‚Г°ГҐГ¬Гї ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї = %.4f Г±ГҐГЄГіГ­Г¤\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
 	printf("\n");
 
-	printf("2.Возрастание массива:\n");
+	printf("2.Г‚Г®Г§Г°Г Г±ГІГ Г­ГЁГҐ Г¬Г Г±Г±ГЁГўГ :\n");
 	for (int i = 0; i < size; i++)
 	{
 		array1[i] = i;
@@ -86,10 +86,10 @@ int main(void)
 	qs(array1, 0, size - 1);
 
 	end = clock();
-	printf("Время выполнения = %.4f секунд\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
+	printf("Г‚Г°ГҐГ¬Гї ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї = %.4f Г±ГҐГЄГіГ­Г¤\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
 	printf("\n");
 
-	printf("3.Убывание массива:\n");
+	printf("3.Г“ГЎГ»ГўГ Г­ГЁГҐ Г¬Г Г±Г±ГЁГўГ :\n");
 	for (int i = 0; i < size; i++)
 	{
 		array1[i] = 10-i;
@@ -100,10 +100,10 @@ int main(void)
 	qs(array1, 0, size - 1);
 
 	end = clock();
-	printf("Время выполнения = %.4f секунд\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
+	printf("Г‚Г°ГҐГ¬Гї ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї = %.4f Г±ГҐГЄГіГ­Г¤\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
 	printf("\n");
 
-	printf("4.Возрастающе-убывающий массив:\n");
+	printf("4.Г‚Г®Г§Г°Г Г±ГІГ ГѕГ№ГҐ-ГіГЎГ»ГўГ ГѕГ№ГЁГ© Г¬Г Г±Г±ГЁГў:\n");
 	for (int i = 0; i < size; i++)
 	{
 		if (i < size / 2)
@@ -118,12 +118,12 @@ int main(void)
 	qs(array1, 0, size - 1);
 
 	end = clock();
-	printf("Время выполнения = %.4f секунд\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
+	printf("Г‚Г°ГҐГ¬Гї ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї = %.4f Г±ГҐГЄГіГ­Г¤\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
 	printf("\n");
 
-	printf("Сортировка Шелла:\n");
+	printf("Г‘Г®Г°ГІГЁГ°Г®ГўГЄГ  ГГҐГ«Г«Г :\n");
 	printf("\n");
-	printf("1.Случайные числа:\n");
+	printf("1.Г‘Г«ГіГ·Г Г©Г­Г»ГҐ Г·ГЁГ±Г«Г :\n");
 
 	for (int i = 0; i < size; i++)
 	{
@@ -134,10 +134,10 @@ int main(void)
 	shell(array1, size);
 
 	end = clock();
-	printf("Время выполнения = %.4f секунд\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
+	printf("Г‚Г°ГҐГ¬Гї ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї = %.4f Г±ГҐГЄГіГ­Г¤\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
 	printf("\n");
 
-	printf("2.Возрастание массива:\n");
+	printf("2.Г‚Г®Г§Г°Г Г±ГІГ Г­ГЁГҐ Г¬Г Г±Г±ГЁГўГ :\n");
 
 	for (int i = 0; i < size; i++)
 	{
@@ -148,10 +148,10 @@ int main(void)
 	shell(array1, size);
 
 	end = clock();
-	printf("Время выполнения = %.4f секунд\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
+	printf("Г‚Г°ГҐГ¬Гї ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї = %.4f Г±ГҐГЄГіГ­Г¤\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
 	printf("\n");
 
-	printf("3.Убывание массива:\n");
+	printf("3.Г“ГЎГ»ГўГ Г­ГЁГҐ Г¬Г Г±Г±ГЁГўГ :\n");
 
 	for (int i = 0; i < size; i++)
 	{
@@ -162,10 +162,10 @@ int main(void)
 	shell(array1, size);
 
 	end = clock();
-	printf("Время выполнения = %.4f секунд\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
+	printf("Г‚Г°ГҐГ¬Гї ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї = %.4f Г±ГҐГЄГіГ­Г¤\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
 	printf("\n");
 
-	printf("4.Возрастающе-убывающий массив:\n");
+	printf("4.Г‚Г®Г§Г°Г Г±ГІГ ГѕГ№ГҐ-ГіГЎГ»ГўГ ГѕГ№ГЁГ© Г¬Г Г±Г±ГЁГў:\n");
 
 	for (int i = 0; i < size; i++)
 	{
@@ -180,12 +180,12 @@ int main(void)
 	shell(array1, size);
 
 	end = clock();
-	printf("Время выполнения = %.4f секунд\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
+	printf("Г‚Г°ГҐГ¬Гї ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї = %.4f Г±ГҐГЄГіГ­Г¤\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
 	printf("\n");
 
 	printf("Quick Sort:\n");
 	printf("\n");
-	printf("1.Случайные числа:\n");
+	printf("1.Г‘Г«ГіГ·Г Г©Г­Г»ГҐ Г·ГЁГ±Г«Г :\n");
 	for (int i = 0; i < size; i++)
 	{
 		array1[i] = rand() % 100;
@@ -195,10 +195,10 @@ int main(void)
 	qsort(array1, size, sizeof(int), comp);
 
 	end = clock();
-	printf("Время выполнения = %.4f секунд\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
+	printf("Г‚Г°ГҐГ¬Гї ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї = %.4f Г±ГҐГЄГіГ­Г¤\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
 	printf("\n");
 
-	printf("2.Возрастание массива:\n");
+	printf("2.Г‚Г®Г§Г°Г Г±ГІГ Г­ГЁГҐ Г¬Г Г±Г±ГЁГўГ :\n");
 	for (int i = 0; i < size; i++)
 	{
 		array1[i] = i;
@@ -208,10 +208,10 @@ int main(void)
 	qsort(array1, size, sizeof(int), comp);
 
 	end = clock();
-	printf("Время выполнения = %.4f секунд\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
+	printf("Г‚Г°ГҐГ¬Гї ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї = %.4f Г±ГҐГЄГіГ­Г¤\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
 	printf("\n");
 
-	printf("3.Убывание массива:\n");
+	printf("3.Г“ГЎГ»ГўГ Г­ГЁГҐ Г¬Г Г±Г±ГЁГўГ :\n");
 	for (int i = 0; i < size; i++)
 	{
 		array1[i] = 10-i;
@@ -221,10 +221,10 @@ int main(void)
 	qsort(array1, size, sizeof(int), comp);
 
 	end = clock();
-	printf("Время выполнения = %.4f секунд\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
+	printf("Г‚Г°ГҐГ¬Гї ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї = %.4f Г±ГҐГЄГіГ­Г¤\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
 	printf("\n");
 
-	printf("4. Возрастающе-убывающий массив:\n");
+	printf("4. Г‚Г®Г§Г°Г Г±ГІГ ГѕГ№ГҐ-ГіГЎГ»ГўГ ГѕГ№ГЁГ© Г¬Г Г±Г±ГЁГў:\n");
 	for (int i = 0; i < size; i++)
 	{
 		if (i < size / 2)
@@ -238,7 +238,7 @@ int main(void)
 	qsort(array1, size, sizeof(int),comp);
 
 	end = clock();
-	printf("Время выполнения = %.4f секунд\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
+	printf("Г‚Г°ГҐГ¬Гї ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї = %.4f Г±ГҐГЄГіГ­Г¤\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
 	printf("\n");
 
 	system("PAUSE");
